@@ -121,6 +121,31 @@ body {
   flex-shrink: 0;
 }
 .about-wrap h2 { margin-top: 2px; }
+
+.edu-title {
+  margin: 14px 0 6px;
+  font-size: 0.95rem;
+  color: #cdd3ff;
+}
+.edu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.edu-list li {
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--primary);
+  border-radius: 8px;
+  padding: 8px 12px;
+  display: flex;
+  flex-direction: column;
+}
+.edu-period { color: var(--primary); font-size: 0.85rem; font-weight: 600; }
+.edu-degree { color: var(--text); font-size: 0.95rem; }
+.edu-school { color: var(--muted); font-size: 0.88rem; }
 @media (max-width: 560px) {
   .about-wrap { flex-direction: column; align-items: center; text-align: center; }
 }
