@@ -127,6 +127,18 @@ body {
 }
 .kv th { width: 120px; color: var(--muted); font-weight: 600; white-space: nowrap; }
 
+.game-ic {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.game-ic img {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
 /* Steps */
 .steps { margin: 0; padding-left: 20px; color: var(--text); }
 .steps li { margin-bottom: 6px; }
