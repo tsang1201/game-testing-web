@@ -16,7 +16,7 @@ body {
   margin: 0;
   font-family: "Segoe UI", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
   background-image: linear-gradient(rgba(15, 18, 32, 0.55), rgba(15, 18, 32, 0.65)),
-    url("images/background02.jpg");
+    url("images/bg03.jpeg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
