@@ -31,5 +31,37 @@
     }
 
     console.log("Game Testing Web scaffold loaded.");
+
+    var galleryImages = document.querySelectorAll(".media-item img");
+    if (galleryImages.length) {
+      var overlay = document.createElement("div");
+      overlay.className = "lightbox";
+      overlay.innerHTML =
+        '<div class="lightbox-body"><img class="lightbox-img" alt="" /><button class="lightbox-close" aria-label="關閉">×</button></div>';
+      document.body.appendChild(overlay);
+
+      function openLightbox(src) {
+        overlay.querySelector(".lightbox-img").src = src;
+        overlay.classList.add("is-open");
+      }
+      function closeLightbox() {
+        overlay.classList.remove("is-open");
+      }
+
+      galleryImages.forEach(function (img) {
+        img.style.cursor = "zoom-in";
+        img.addEventListener("click", function () {
+          openLightbox(img.getAttribute("src"));
+        });
+      });
+      overlay.addEventListener("click", function (e) {
+        if (e.target === overlay || e.target.classList.contains("lightbox-close")) {
+          closeLightbox();
+        }
+      });
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") closeLightbox();
+      });
+    }
   });
 })();
