@@ -15,7 +15,11 @@
 body {
   margin: 0;
   font-family: "Segoe UI", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
-  background: var(--bg);
+  background-image: linear-gradient(rgba(15, 18, 32, 0.82), rgba(15, 18, 32, 0.88)),
+    url("images/background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   color: var(--text);
   line-height: 1.7;
 }
@@ -127,12 +131,25 @@ body {
 .sev-minor   { background: rgba(47, 158, 68, 0.15);  color: var(--minor);   border: 1px solid var(--minor); }
 .sev-pick { color: var(--muted); font-size: 0.85rem; font-style: italic; }
 
-/* Media */
-.media-drop {
-  border: 2px dashed var(--border);
+/* Media gallery */
+.media-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 14px;
+}
+.media-item { margin: 0; }
+.media-item img {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--border);
   border-radius: 8px;
-  padding: 18px;
+  display: block;
+}
+.media-item figcaption {
+  color: var(--muted);
+  font-size: 0.82rem;
   text-align: center;
+  margin-top: 4px;
 }
 
 /* Footer */
