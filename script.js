@@ -32,6 +32,30 @@
 
     console.log("Game Testing Web scaffold loaded.");
 
+    var bugPages = Array.prototype.slice.call(document.querySelectorAll(".bug-page"));
+    if (bugPages.length) {
+      var current = 0;
+      var indicator = document.getElementById("bugIndicator");
+      var prevBtn = document.getElementById("prevBug");
+      var nextBtn = document.getElementById("nextBug");
+
+      function render() {
+        bugPages.forEach(function (p, i) {
+          p.classList.toggle("is-active", i === current);
+        });
+        if (indicator) indicator.textContent = current + 1 + " / " + bugPages.length;
+        if (prevBtn) prevBtn.disabled = current === 0;
+        if (nextBtn) nextBtn.disabled = current === bugPages.length - 1;
+      }
+      if (prevBtn) prevBtn.addEventListener("click", function () {
+        if (current > 0) { current--; render(); }
+      });
+      if (nextBtn) nextBtn.addEventListener("click", function () {
+        if (current < bugPages.length - 1) { current++; render(); }
+      });
+      render();
+    }
+
     var galleryImages = document.querySelectorAll(".media-item img");
     if (galleryImages.length) {
       var overlay = document.createElement("div");
